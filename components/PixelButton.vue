@@ -14,7 +14,7 @@ const { wrapStyle, contentStyle } = useButtonLikeStyle({
   <OnPixelGrid>
     <div
       ref="button"
-      class="button cursor-pointer flex justify-center p-1"
+      class="button cursor-pointer flex justify-center p-2"
       :style="wrapStyle"
       style="image-rendering: pixelated"
     >

@@ -1,5 +1,5 @@
-export const PIXEL_SIZE = "4px";
-export const PIXEL_SIZE_RENDERED = 4;
+export const PIXEL_SIZE = "3.5px";
+export const PIXEL_SIZE_RENDERED = 3.5;
 
 export function calcPixelSizeAsNumber(): number {
   const measure = document.createElement("div");

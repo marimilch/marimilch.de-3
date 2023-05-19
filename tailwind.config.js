@@ -2,17 +2,17 @@ export default {
   theme: {
     fontSize: {
       base: [
-        "20px",
+        "calc( 5 * 3.5px )", // 5 * pixel size
         {
-          lineHeight: "36px",
+          lineHeight: "calc( 7 * 3.5px )", // 7 * pixel size
           letterSpacing: "0",
           fontWeight: "500",
         },
       ],
       large: [
-        "40px",
+        "calc( 10 * 3.5px )", // 10 * pixel size
         {
-          lineHeight: "72px",
+          lineHeight: "calc( 14 * 3.5px )", // 14 * pixel size
           letterSpacing: "0",
           fontWeight: "500",
         },
