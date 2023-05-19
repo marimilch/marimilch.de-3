@@ -1,22 +1,17 @@
 <script lang="ts" setup>
 import { useElementBounding } from "@vueuse/core";
-import { calcPixelSizeAsNumber, PIXEL_SIZE_RENDERED } from "~/ts/globals";
+import { onPixelGrid } from "~/ts/helpers";
 
 const wrap = ref<HTMLDivElement | null>(null);
 const rect = useElementBounding(wrap);
 const pixelGridPosition = computed(() => ({
-  top: roundToPixel(rect.top.value),
-  left: roundToPixel(rect.left.value),
+  top: onPixelGrid(rect.top.value),
+  left: onPixelGrid(rect.left.value),
 }));
 const delta = computed(() => ({
   top: pixelGridPosition.value.top - rect.top.value,
   left: pixelGridPosition.value.left - rect.left.value,
 }));
-
-function roundToPixel(x: number): number {
-  calcPixelSizeAsNumber();
-  return Math.round(x / PIXEL_SIZE_RENDERED) * PIXEL_SIZE_RENDERED;
-}
 </script>
 
 <template>

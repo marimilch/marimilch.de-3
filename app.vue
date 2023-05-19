@@ -1,5 +1,5 @@
 <template>
-  <div class="font-main text-3xl text-purple p-2 bg-purple-100">
+  <div class="font-main text-base text-purple py-4 bg-purple-100">
     <NuxtPage />
   </div>
 </template>
