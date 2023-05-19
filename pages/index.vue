@@ -1,6 +1,8 @@
 <template>
   <div>
-    <PixelButton />
+    <OnPixelGrid> </OnPixelGrid>
+    <PixelButton>About</PixelButton>
+    <PixelButtonMini>></PixelButtonMini>
     <OnPixelGrid>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, fugiat
       exercitationem? Dolores non corporis cupiditate officia accusamus animi,

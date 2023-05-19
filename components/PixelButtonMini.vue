@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import ButtonSprite from "~/assets/images/sprites/button.png";
+import ButtonSprite from "~/assets/images/sprites/button-mini.png";
 
 const button = ref<HTMLDivElement | null>(null);
 const { wrapStyle, contentStyle } = useButtonLikeStyle({
   spriteSrc: ButtonSprite,
-  width: 31,
+  width: 14,
   height: 13,
   button,
 });

@@ -13,3 +13,5 @@ export function calcPixelSizeAsNumber(): number {
 
   return result;
 }
+
+export type SpriteSrc = string;
