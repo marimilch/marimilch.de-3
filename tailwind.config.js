@@ -24,6 +24,7 @@ export default {
     colors: {
       purple: {
         100: "rgb(26 17 42)",
+        300: "rgb(168 71 129)",
         DEFAULT: "rgb(210 145 159)",
       },
       cyan: "rgb(129 187 230)",

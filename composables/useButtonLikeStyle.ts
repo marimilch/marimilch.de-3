@@ -20,10 +20,12 @@ export function useButtonLikeStyle(
   const button = config.button;
 
   onMounted(() => {
-    button.value?.addEventListener("click", async () => {
+    button.value?.addEventListener("touchstart", async () => {
       indexX.value = 1;
       await wait(30);
       indexX.value = 2;
+    });
+    button.value?.addEventListener("touchend", async () => {
       await wait(120);
       indexX.value = 1;
       await wait(30);

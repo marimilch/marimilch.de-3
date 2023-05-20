@@ -34,12 +34,20 @@ function renderCascade() {
   window.requestAnimationFrame(renderCascade);
 }
 
-renderCascade();
+onMounted(() => {
+  renderCascade();
+});
 </script>
 
 <template>
   <div class="relative">
-    <PixelImage :src="HeaderBack" :width="2" :height="53" class="!w-full" />
+    <PixelImage
+      :src="HeaderBack"
+      :width="2"
+      :height="53"
+      class="w-full"
+      content-class="!w-full"
+    />
     <div
       class="w-full absolute flex justify-center items-center top-0 left-0 h-44"
     >
@@ -69,12 +77,13 @@ renderCascade();
           :src="HeaderHorizontalLine"
           :width="1"
           :height="3"
-          class="!w-full"
+          class="w-full"
+          content-class="!w-full"
         />
       </div>
     </div>
     <div
-      class="w-full absolute flex justify-center items-center top-0 left-0 h-52"
+      class="w-full absolute flex justify-center items-end top-0 left-0 h-40"
     >
       <div :style="`left: ${wave}px; top: ${wave2}px`" class="relative">
         <PixelImage :src="HeaderGlass" :width="12" :height="29" />
