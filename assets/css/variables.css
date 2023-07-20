@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-purple-100: 26 17 42;
+    --color-purple-300: 168 71 129;
+    --color-purple: 255 115 179;
+
+    --color-cyan: 129 187 230;
+  }
+}
+

@@ -23,11 +23,13 @@ export default {
     },
     colors: {
       purple: {
-        100: "rgb(26 17 42)",
-        300: "rgb(168 71 129)",
-        DEFAULT: "rgb(210 145 159)",
+        100: "rgb(var(--color-purple-100) / <alpha-value>)",
+        300: "rgb(var(--color-purple-300) / <alpha-value>)",
+        DEFAULT: "rgb(var(--color-purple) / <alpha-value>)",
       },
-      cyan: "rgb(129 187 230)",
+      cyan: "rgb(var(--color-cyan) / <alpha-value>)",
+      black: "#000",
+      white: "#fff",
     },
   },
 };

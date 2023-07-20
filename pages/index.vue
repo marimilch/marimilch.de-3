@@ -8,7 +8,7 @@
         </OnPixelGrid>
       </div>
 
-      <PixelButton class="mt-2">About</PixelButton>
+      <PixelButton class="mt-2" @up="navigateTo('/about')">About</PixelButton>
     </div>
 
     <PixelHeader class="mt-8" />
@@ -23,14 +23,29 @@
       <PixelButtonMiniPlay class="mt-4" />
     </div>
 
-    <div class="px-6 py-2 opacity-25 mt-12 flex flex-col items-center">
-      <div>
-        <OnPixelGrid> +-+</OnPixelGrid>
-        <OnPixelGrid> |c| marimilch </OnPixelGrid>
-        <OnPixelGrid> +-+ </OnPixelGrid>
-      </div>
-      <OnPixelGrid class="mt-8"> too poor </OnPixelGrid>
-      <OnPixelGrid> for cereal </OnPixelGrid>
+    <div class="px-6 mt-8">
+      <OnPixelGrid class="text-cyan sm:text-large">
+        Star Fox Clone
+      </OnPixelGrid>
+    </div>
+    <div class="px-6 py-2">
+      <OnPixelGrid> A clone of the first stage in Star Fox. </OnPixelGrid>
+      <PixelButtonMiniPlay class="mt-4" />
+    </div>
+
+    <div class="px-6 mt-8">
+      <OnPixelGrid class="text-cyan sm:text-large">
+        Star Fox Clone
+      </OnPixelGrid>
+    </div>
+    <div class="px-6 py-2">
+      <OnPixelGrid> A clone of the first stage in Star Fox. </OnPixelGrid>
+      <PixelButtonMiniPlay class="mt-4" />
+    </div>
+
+    <div class="px-6 py-2 opacity-25 mt-12 flex flex-col items-center gap-2">
+      <OnPixelGrid> marimilch </OnPixelGrid>
+      <OnPixelGrid> ## page end ## </OnPixelGrid>
     </div>
   </div>
 </template>

@@ -1,7 +1,11 @@
+<script lang="ts" setup>
+import "assets/css/variables.css";
+</script>
+
 <template>
-  <div class="font-main text-base text-purple py-4 bg-purple-100 blur-[0.75px]">
+  <MainPage>
     <NuxtPage />
-  </div>
+  </MainPage>
 </template>
 
 <style>

@@ -23,7 +23,7 @@ const perspectives = computed(() => [
 
 function render() {
   t1.value = (t1.value + 0.02) % (Math.PI * 2);
-  t2.value = (t2.value + 0.017) % (Math.PI * 2);
+  t2.value = (t2.value + 0.005) % (Math.PI * 2);
   t3.value = (t3.value + 0.01) % 2;
   t4.value = (t4.value + 0.01) % 2;
   t5.value = (t5.value + 0.01) % 2;

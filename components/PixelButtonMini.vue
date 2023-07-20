@@ -1,12 +1,14 @@
 <script lang="ts" setup>
 import ButtonSprite from "~/assets/images/sprites/button-mini.png";
 
+const emit = defineEmits(["up", "down"]);
 const button = ref<HTMLDivElement | null>(null);
 const { wrapStyle, contentStyle } = useButtonLikeStyle({
   spriteSrc: ButtonSprite,
   width: 14,
   height: 13,
   button,
+  emit,
 });
 </script>
 

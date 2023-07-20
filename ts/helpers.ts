@@ -9,3 +9,17 @@ export function wait(delay: number): Promise<void> {
 export function onPixelGrid(n: number): number {
   return Math.round(n / PIXEL_SIZE_RENDERED) * PIXEL_SIZE_RENDERED;
 }
+
+export type OnEnterFrameData = {
+  dt: number;
+  mesh: THREE.Mesh;
+  camera: THREE.Camera;
+  renderer: THREE.Renderer;
+  scene: THREE.Scene;
+};
+
+export type OnInitData = {
+  camera: THREE.Camera;
+  renderer: THREE.Renderer;
+  scene: THREE.Scene;
+};
