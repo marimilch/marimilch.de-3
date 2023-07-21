@@ -12,6 +12,12 @@ const delta = computed(() => ({
   top: pixelGridPosition.value.top - rect.top.value,
   left: pixelGridPosition.value.left - rect.left.value,
 }));
+
+type OnPixelGridProps = {
+  childClass?: string | Array<string> | Record<string, boolean>;
+};
+
+const props = withDefaults(defineProps<OnPixelGridProps>(), { childClass: "" });
 </script>
 
 <template>
@@ -20,6 +26,7 @@ const delta = computed(() => ({
       :style="{
         transform: `translate(${delta.left}px, ${delta.top}px) `,
       }"
+      :class="props.childClass"
     >
       <slot />
     </div>

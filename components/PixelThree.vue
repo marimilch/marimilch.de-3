@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import { useElementBounding } from "@vueuse/core";
+import { useElementBounding, useElementVisibility } from "@vueuse/core";
 import * as THREE from "three";
 import { PIXEL_SIZE_RENDERED } from "~/ts/globals";
 import { OnEnterFrameData, OnInitData } from "~/ts/helpers";
-import { useElementVisibility } from "@vueuse/core";
 
 const canvas = ref<HTMLCanvasElement | undefined>(undefined);
 const isVisible = useElementVisibility(canvas);
@@ -23,7 +22,7 @@ onMounted(async () => {
   if (canvas === null) return;
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(
-    75,
+    300,
     width.value / height.value,
     0.1,
     1000
@@ -87,7 +86,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <OnPixelGrid>
+  <OnPixelGrid child-class="w-full h-full">
     <canvas ref="canvas" class="!w-full !h-full" />
   </OnPixelGrid>
 </template>
