@@ -66,20 +66,26 @@ onMounted(async () => {
 
   watch(
     width,
-    (w) =>
+    (w) => {
       renderer.setSize(
         w / PIXEL_SIZE_RENDERED,
         height.value / PIXEL_SIZE_RENDERED
-      ),
+      );
+      camera.aspect = w / height.value;
+      camera.updateProjectionMatrix();
+    },
     { immediate: true }
   );
   watch(
     height,
-    (h) =>
+    (h) => {
       renderer.setSize(
         width.value / PIXEL_SIZE_RENDERED,
         h / PIXEL_SIZE_RENDERED
-      ),
+      );
+      camera.aspect = width.value / h;
+      camera.updateProjectionMatrix();
+    },
     { immediate: true }
   );
 });
