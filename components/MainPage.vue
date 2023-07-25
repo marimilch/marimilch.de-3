@@ -4,19 +4,21 @@
   >
     <PixelLoadingBar />
 
-    <div class="blur-[0.75px] rounded-xl bg-purple-100">
+    <div class="blur-[.75px] rounded-xl bg-purple-100 flex justify-center">
       <!-- <PixelTransition :trigger="pageState"></PixelTransition> -->
-      <slot />
+      <div class="max-w-3xl w-full relative">
+        <slot />
+      </div>
     </div>
 
     <div
       class="fixed top-0 left-0 w-full h-screen pointer-events-none blur-sm overflow-hidden z-20"
     >
       <div
-        v-for="i in 100"
+        v-for="i in 20"
         :key="i"
-        class="black-bar w-full opacity-50"
-        :class="i % 2 === 0 ? 'bg-black h-[.5vh]' : 'h-[3vh]'"
+        class="black-bar w-full opacity-5"
+        :class="i % 2 === 0 ? 'bg-black h-[10vh]' : 'bg-white h-[10vh]'"
       ></div>
     </div>
 
@@ -40,15 +42,15 @@
 
 <style scoped>
 .black-bar {
-  animation: top-to-bottom 2s linear infinite;
+  animation: top-to-bottom 1s linear infinite;
 }
 
 @keyframes top-to-bottom {
   from {
-    transform: translateY(-3.5vh);
+    transform: translateY(-20vh);
   }
   to {
-    transform: translateY(3.5vh);
+    transform: translateY(0);
   }
 }
 </style>

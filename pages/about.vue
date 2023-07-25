@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-3xl mx-auto">
+  <div>
     <div class="px-6 flex justify-between items-center gap-2">
       <div class="flex items-center gap-8">
         <LogoMini />
@@ -18,12 +18,24 @@
       </OnPixelGrid>
     </div>
 
+    <PixelSpinningModel
+      class="h-[min(50vmax,_25rem)]"
+      model-src="glass_milk.glb"
+      :camera-distance="0.6"
+    />
+
     <div class="px-6 py-2">
       <OnPixelGrid>
         marimilch is a reference to the german version of the book A Shadow Like
         A Leopard by Myron Levoy.
       </OnPixelGrid>
     </div>
+
+    <PixelSpinningModel
+      class="h-[min(50vmax,_25rem)]"
+      model-src="tv.glb"
+      :camera-distance="8"
+    />
 
     <div class="px-6 py-2">
       <OnPixelGrid class="text-cyan"> I would like to thank: </OnPixelGrid>

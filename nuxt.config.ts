@@ -2,10 +2,6 @@
 export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss"],
   app: {
-    pageTransition: {
-      onEnter(_el, done) {
-        done();
-      },
-    },
+    pageTransition: { name: "page", mode: "in-out" },
   },
 });

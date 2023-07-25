@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-3xl mx-auto">
+  <div>
     <div class="px-6 flex justify-between items-center gap-2">
       <div class="flex items-center gap-8">
         <LogoMini />
@@ -14,12 +14,10 @@
     <PixelHeader class="mt-8" />
 
     <div class="px-6 mt-8">
-      <OnPixelGrid class="text-cyan sm:text-large">
-        Star Fox Clone
-      </OnPixelGrid>
+      <OnPixelGrid class="text-cyan sm:text-large"> Inc Party </OnPixelGrid>
     </div>
     <div class="px-6 py-2">
-      <OnPixelGrid> A clone of the first stage in Star Fox. </OnPixelGrid>
+      <OnPixelGrid> Picolo inspired mobile game. </OnPixelGrid>
       <PixelButtonMiniPlay class="mt-4" />
     </div>
 
@@ -29,17 +27,15 @@
       </OnPixelGrid>
     </div>
     <div class="px-6 py-2">
-      <OnPixelGrid> A clone of the first stage in Star Fox. </OnPixelGrid>
+      <OnPixelGrid> Clone of the first stage in Star Fox. </OnPixelGrid>
       <PixelButtonMiniPlay class="mt-4" />
     </div>
 
     <div class="px-6 mt-8">
-      <OnPixelGrid class="text-cyan sm:text-large">
-        Star Fox Clone
-      </OnPixelGrid>
+      <OnPixelGrid class="text-cyan sm:text-large"> Klara </OnPixelGrid>
     </div>
     <div class="px-6 py-2">
-      <OnPixelGrid> A clone of the first stage in Star Fox. </OnPixelGrid>
+      <OnPixelGrid> RPG Maker 2003 game about guilt. </OnPixelGrid>
       <PixelButtonMiniPlay class="mt-4" />
     </div>
 

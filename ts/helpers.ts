@@ -15,11 +15,13 @@ export type OnEnterFrameData = {
   mesh: THREE.Mesh;
   camera: THREE.Camera;
   renderer: THREE.Renderer;
+  // composer: any;
   scene: THREE.Scene;
 };
 
 export type OnInitData = {
   camera: THREE.Camera;
   renderer: THREE.Renderer;
+  // composer: any;
   scene: THREE.Scene;
 };

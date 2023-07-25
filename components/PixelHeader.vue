@@ -56,15 +56,19 @@ onMounted(() => {
       </div>
     </div>
 
-    <div
+    <div class="h-20 top-28 absolute overflow-hidden w-full max-w-3xl">
+      <PixelHeaderFloor :camera-distance="15" class="h-full" />
+    </div>
+
+    <!-- <div
       class="w-full absolute flex justify-center items-end top-0 left-0 h-44"
     >
       <div>
         <PixelImage :src="HeaderVerticalLines" :width="80" :height="16" />
       </div>
-    </div>
+    </div> -->
 
-    <div
+    <!-- <div
       v-for="(perspective, i) in perspectives"
       :key="i"
       class="w-full absolute flex justify-center items-end top-0 left-0 h-48"
@@ -81,7 +85,7 @@ onMounted(() => {
           content-class="!w-full"
         />
       </div>
-    </div>
+    </div> -->
     <div
       class="w-full absolute flex justify-center items-end top-0 left-0 h-40"
     >

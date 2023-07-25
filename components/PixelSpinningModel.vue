@@ -1,11 +1,16 @@
 <script lang="ts" setup>
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader";
 import * as THREE from "three";
 import { OnEnterFrameData, OnInitData } from "~/ts/helpers";
 
 const SPEED_MAX = 30;
-const XZ_SCALE_FACTOR_MAX = 1.125;
-const SPEEDING_DURATION = 500;
+const XZ_SCALE_FACTOR_MAX = 1.225;
+const SPEEDING_DURATION = 450;
 const SPEED_ACCELERATION = 0.75;
+const MODEL_TILT_ANGLE_X_MIN = -0.3;
+const MODEL_TILT_ANGLE_Z_MIN = 0;
+const MODEL_TILT_ANGLE_X_MAX = -0.5;
+const MODEL_TILT_ANGLE_Z_MAX = -0.1;
 
 const threeCanvas = ref<HTMLElement | undefined>(undefined);
 let distanceToMidYFraction: ComputedRef<number> | null = null;
@@ -13,6 +18,8 @@ const speedFactor = ref(1);
 const xzScaleFactor = ref(1);
 const isSpeeding = ref(false);
 const dtLocal = ref(0);
+
+const props = defineProps<{ modelSrc: string; cameraDistance: number }>();
 
 function clamp(
   value: number,
@@ -46,13 +53,42 @@ onMounted(() => {
 });
 
 const onInit = ({ camera }: OnInitData) => {
-  const geometry = new THREE.DodecahedronGeometry(3);
-  const material = new THREE.MeshNormalMaterial();
-  const mesh = new THREE.Mesh(geometry, material);
-  mesh.rotation.x += 0.5;
-  camera.position.z = 10;
+  // const geometry = new THREE.DodecahedronGeometry(3);
+  const material = new THREE.MeshNormalMaterial({
+    // flatShading: true,
+  });
+  // const mesh = new THREE.Mesh(geometry, material);
+  camera.position.z = props.cameraDistance;
 
-  return mesh;
+  // Instantiate a loader
+  const loader = new GLTFLoader();
+
+  // Load a glTF resource
+  return new Promise<THREE.Mesh>((resolve, reject) => {
+    loader.load(
+      // resource URL
+      `/models/${props.modelSrc}`,
+      // called when the resource is loaded
+      function (gltf: GLTFLoader) {
+        // scene.add(gltf.scene);
+        gltf.scene.traverse((o: any) => {
+          if (!o.isMesh) return;
+
+          o.material = material;
+        });
+
+        resolve(gltf.scene);
+      },
+      // called while loading is progressing
+      function (xhr: any) {
+        console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+      },
+      // called when loading has errors
+      function (error: any) {
+        reject(error);
+      }
+    );
+  });
 };
 
 const onEnterFrame = ({ mesh, dt }: OnEnterFrameData) => {
@@ -67,7 +103,15 @@ const onEnterFrame = ({ mesh, dt }: OnEnterFrameData) => {
   const safeDistanceToMidYFraction = distanceToMidYFraction
     ? distanceToMidYFraction.value
     : 0;
-  mesh.rotation.x = -safeDistanceToMidYFraction * 0.75;
+  mesh.rotation.x =
+    -safeDistanceToMidYFraction * 0.75 +
+    clamp(dtLocalFraction, MODEL_TILT_ANGLE_X_MIN, MODEL_TILT_ANGLE_X_MAX);
+
+  mesh.rotation.z = clamp(
+    dtLocalFraction,
+    MODEL_TILT_ANGLE_Z_MIN,
+    MODEL_TILT_ANGLE_Z_MAX
+  );
   mesh.rotation.y += ((0.5 * dt) / 1000) * speedFactor.value;
   mesh.scale.x = xzScaleFactor.value;
   mesh.scale.y = 1 / xzScaleFactor.value;
@@ -76,13 +120,15 @@ const onEnterFrame = ({ mesh, dt }: OnEnterFrameData) => {
 </script>
 
 <template>
-  <div class="h-[300vh] flex items-center w-full">
+  <div
+    class="overflow-visible flex justify-center items-center cursor-pointer"
+    @click="shortSpeedUp"
+  >
     <PixelThree
       ref="threeCanvas"
-      class="w-full h-[50vmax] cursor-pointer"
+      class="w-full h-[min(100vmax,_50rem)] pointer-events-none"
       :on-enter-frame="onEnterFrame"
       :on-init="onInit"
-      @click="shortSpeedUp"
     />
   </div>
 </template>
