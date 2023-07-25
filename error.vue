@@ -10,7 +10,7 @@ console.log(props.error);
 
 <template>
   <NuxtLayout>
-    <div class="flex flex-col w-full p-8 h-screen justify-center">
+    <div class="flex flex-col w-full p-8 justify-center">
       <OnPixelGrid class="text-purple text-large">
         {{ error.statusCode || "Error" }}
       </OnPixelGrid>

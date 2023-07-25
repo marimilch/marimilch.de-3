@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import ButtonIconPlay from "~/assets/images/button-icon-play.png";
+import ButtonIconInfo from "~/assets/images/button-icon-info.png";
 
 const aTag = ref<HTMLAnchorElement | null>(null);
 
@@ -22,10 +22,10 @@ const emit = defineEmits(["up", "down"]);
 <template>
   <PixelButtonMini @up="handleLink(), emit('up')" @down="emit('down')">
     <PixelImage
-      :src="ButtonIconPlay"
+      :src="ButtonIconInfo"
       :width="8"
       :height="7"
-      class="relative top-[8px] left-[8px]"
+      class="relative top-[7px] left-[11px]"
     />
     <a v-if="href" ref="aTag" target="_blank" class="hidden" :href="href" />
   </PixelButtonMini>

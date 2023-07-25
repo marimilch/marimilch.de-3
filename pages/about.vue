@@ -1,14 +1,9 @@
 <template>
   <div>
-    <div class="px-6 flex justify-between items-center gap-2">
+    <div class="px-6 flex justify-between items-center gap-2 pb-8">
       <div class="flex items-center gap-8">
-        <LogoMini />
-        <OnPixelGrid class="text-cyan hidden sm:block md:text-large">
-          About
-        </OnPixelGrid>
+        <OnPixelGrid class="text-cyan md:text-large"> About </OnPixelGrid>
       </div>
-
-      <PixelButton class="mt-2" @up="navigateTo('/')">Back</PixelButton>
     </div>
 
     <div class="px-6 py-2">

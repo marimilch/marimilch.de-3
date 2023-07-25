@@ -6,8 +6,17 @@
 
     <div class="blur-[.75px] rounded-xl bg-purple-100 flex justify-center">
       <!-- <PixelTransition :trigger="pageState"></PixelTransition> -->
-      <div class="max-w-3xl w-full relative">
-        <slot />
+      <div class="max-w-3xl w-full">
+        <PixelNavigation />
+        <div class="relative">
+          <slot />
+        </div>
+        <div
+          class="px-6 py-2 opacity-25 mt-12 flex flex-col items-center gap-2"
+        >
+          <OnPixelGrid> marimilch </OnPixelGrid>
+          <OnPixelGrid> ## page end ## </OnPixelGrid>
+        </div>
       </div>
     </div>
 
