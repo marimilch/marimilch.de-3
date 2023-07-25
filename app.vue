@@ -3,9 +3,9 @@ import "assets/css/variables.css";
 </script>
 
 <template>
-  <MainPage>
+  <NuxtLayout>
     <NuxtPage />
-  </MainPage>
+  </NuxtLayout>
 </template>
 
 <style>

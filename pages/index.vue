@@ -13,13 +13,13 @@
 
     <PixelHeader class="mt-8" />
 
-    <div class="px-6 mt-8">
+    <!-- <div class="px-6 mt-8">
       <OnPixelGrid class="text-cyan sm:text-large"> Inc Party </OnPixelGrid>
     </div>
     <div class="px-6 py-2">
       <OnPixelGrid> Picolo inspired mobile game. </OnPixelGrid>
       <PixelButtonMiniPlay class="mt-4" />
-    </div>
+    </div> -->
 
     <div class="px-6 mt-8">
       <OnPixelGrid class="text-cyan sm:text-large">
@@ -28,7 +28,11 @@
     </div>
     <div class="px-6 py-2">
       <OnPixelGrid> Clone of the first stage in Star Fox. </OnPixelGrid>
-      <PixelButtonMiniPlay class="mt-4" />
+      <div class="flex gap-4">
+        <PixelButtonMiniPlay class="mt-4" href="/starfox" />
+        <PixelButtonMiniDownload class="mt-4" href="/starfox" />
+        <PixelButtonMiniLearnMore class="mt-4" href="/starfox" />
+      </div>
     </div>
 
     <div class="px-6 mt-8">

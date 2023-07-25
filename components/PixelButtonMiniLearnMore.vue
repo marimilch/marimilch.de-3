@@ -25,7 +25,7 @@ const emit = defineEmits(["up", "down"]);
       :src="ButtonIconPlay"
       :width="8"
       :height="7"
-      class="relative top-[8px] left-[12px]"
+      class="relative top-[8px] left-[8px]"
     />
     <a v-if="href" ref="aTag" target="_blank" class="hidden" :href="href" />
   </PixelButtonMini>

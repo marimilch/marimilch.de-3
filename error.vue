@@ -9,7 +9,7 @@ console.log(props.error);
 </script>
 
 <template>
-  <MainPage>
+  <NuxtLayout>
     <div class="flex flex-col w-full p-8 h-screen justify-center">
       <OnPixelGrid class="text-purple text-large">
         {{ error.statusCode || "Error" }}
@@ -19,5 +19,5 @@ console.log(props.error);
       </OnPixelGrid>
       <PixelButton @up="handleError()">Ok</PixelButton>
     </div>
-  </MainPage>
+  </NuxtLayout>
 </template>
