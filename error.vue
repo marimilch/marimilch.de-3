@@ -4,8 +4,6 @@ const props = defineProps<{
 }>();
 
 const handleError = () => clearError({ redirect: "/" });
-
-console.log(props.error);
 </script>
 
 <template>

@@ -19,13 +19,13 @@
     <div class="px-6 py-2">
       <OnPixelGrid> Clone of the first stage in Star Fox. </OnPixelGrid>
       <div class="flex gap-4">
-        <PixelButtonMiniPlay
+        <!-- <PixelButtonMiniPlay
           class="mt-4"
           href="/game-assets/star-fox-clone/play"
-        />
+        /> -->
         <PixelButtonMiniDownload
           class="mt-4"
-          href="/game-assets/star-fox-clone/star-fox-clone.zip"
+          href="https://github.com/marimilch/star-fox-clone/releases/tag/latest"
         />
         <PixelButtonMiniLearnMore
           class="mt-4"
@@ -42,7 +42,7 @@
       <div class="flex gap-4">
         <PixelButtonMiniDownload
           class="mt-4"
-          href="/game-assets/klara/klara.zip"
+          href="https://github.com/marimilch/public-releases/releases/download/latest/Klara-Demo-Win32.zip"
         />
         <PixelButtonMiniLearnMore
           class="mt-4"

@@ -26,8 +26,8 @@
       <div
         v-for="i in 20"
         :key="i"
-        class="black-bar w-full opacity-5"
-        :class="i % 2 === 0 ? 'bg-black h-[10vh]' : 'bg-white h-[10vh]'"
+        class="black-bar w-full opacity-20"
+        :class="i % 2 === 0 ? 'bg-black h-[10vh]' : 'h-[10vh]'"
       ></div>
     </div>
 
